@@ -9,7 +9,7 @@ if 0: #not api_key:
     exit()
 
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
-
+st.title("문장 생성기")
 def get_user_input():
     year = input("출생년도?(숫자만): ").strip()
     count = input("이름 생성 개수?: ").strip()
