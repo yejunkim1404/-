@@ -1,17 +1,14 @@
-import os
+import streamlit as st
 from openai import OpenAI
-from dotenv import load_dotenv
 
-# .env 파일에서 OPENAI_API_KEY 로드
-load_dotenv()
-api_key = os.getenv("OPENAI_API_KEY")
+# --- API KEY ---
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 if not api_key:
     print("❌ API 키가 설정되어 있지 않습니다. .env 파일을 확인하세요.")
     exit()
 
-client = OpenAI(api_key=api_key)
-
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 def get_user_input():
     year = input("출생년도?(숫자만): ").strip()
