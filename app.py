@@ -11,11 +11,11 @@ if 0: #not api_key:
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 st.title("문장 생성기")
 def get_user_input():
-    year = input("출생년도?(숫자만): ").strip()
-    count = input("이름 생성 개수?: ").strip()
-    gender = input("성별(남자/여자): ").strip()
-    family_name = input("성 입력: ").strip()
-    feeling = input("원하는 이름 느낌: ").strip()
+    year = st.text_input("출생년도?(숫자만): ").strip()
+    count = st.text_input("이름 생성 개수?: ").strip()
+    gender = st.text_input("성별(남자/여자): ").strip()
+    family_name = st.text_input("성 입력: ").strip()
+    feeling = st.text_input("원하는 이름 느낌: ").strip()
 
     try:
         count = int(count)
