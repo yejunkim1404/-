@@ -4,7 +4,7 @@ from openai import OpenAI
 # --- API KEY ---
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
-if not api_key:
+if 0: #not api_key:
     print("❌ API 키가 설정되어 있지 않습니다. .env 파일을 확인하세요.")
     exit()
 
